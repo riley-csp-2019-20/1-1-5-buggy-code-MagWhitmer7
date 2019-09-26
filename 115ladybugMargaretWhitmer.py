@@ -1,13 +1,27 @@
 #   a115_ladybug.py
 import turtle as trtl
-
-# create ladybug head
 ladybug = trtl.Turtle()
+
+# configure legs
+legs = 6
+leg_length = 70
+turtle_direction = 360 / legs
+ladybug.pensize(5)
+
+# draw legs
+loop_variable = 0
+while (loop_variable < legs):
+  ladybug.goto(0,-30)
+  ladybug.setheading(turtle_direction*loop_variable)
+  ladybug.forward(leg_length)
+  loop_variable+=1
+
+# create ladybug head and body
+ladybug.up()
+ladybug.goto(0,0)
+ladybug.down()
 ladybug.pensize(40)
 ladybug.circle(5)
-
-
-# and body
 ladybug.penup()
 ladybug.goto(0, -55) 
 ladybug.color("red")
@@ -29,7 +43,7 @@ xpos = -20
 ypos = -55
 ladybug.pensize(10)
 
-# draw two sets of dots
+# # draw two sets of dots
 while (num_dots < 2 ):
   ladybug.penup()
   ladybug.goto(xpos, ypos)
@@ -41,23 +55,12 @@ while (num_dots < 2 ):
   ladybug.circle(2)
   num_dots+=1
 
-  # position next dots
+# position next dots
   xpos = xpos + 5
   xpos = ypos + 25
   num_dot = num_dots + 1
 
-# configure legs
-legs = 8
-leg_length = 70
-turtle_direction = 10000 / legs
-ladybug.pensize(5)
-# draw legs
-loop_variable = 0
-while (loop_variable < legs):
-  ladybug.goto(0,-30)
-  ladybug.setheading(turtle_direction*loop_variable)
-  ladybug.forward(leg_length)
-  loop_variable+=1
+
 
 
 
